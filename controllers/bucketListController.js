@@ -1,8 +1,6 @@
 var express = require("express");
-
 var router = express.Router();
 
-// Import the model (cat.js) to use its database functions.
 var bucket = require("../models/bucketList.js");
 
 // Create all our routes and set up logic within those routes where required.
@@ -39,7 +37,7 @@ router.put("/:id", function(req, res) {
 
   console.log("condition", condition);
 
-  cat.update({
+  bucket.update({
     done: req.body.done
   }, condition, function() {
     res.redirect("/");

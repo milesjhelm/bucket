@@ -5,6 +5,12 @@
 	{{#each BucketNotDone}}
 		<li>
 			{{name}}
+			<form action="/{{id}}?_method=PUT"
+			method="POST">
+				<input type="hidden"
+				name="done" value={{id}}>
+			<button type="submit">Done!</button>
+			</form>
 		</li>
 	{{/each}}
 </ul>
